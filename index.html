@@ -27,7 +27,7 @@
         .hero-banner {
             width: 100%;
             height: 350px;
-            background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200'); /* Platzhalter: Filmklappe/Set */
+            background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200'); /* Kamera/Film-Set */
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid var(--border-light);
@@ -92,21 +92,15 @@
             max-width: 850px;
         }
 
-        /* Visuelles Portfolio Grid (3 Spalten mit Bildern) */
+        /* Symmetrisches 2x2 Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
             margin-top: 20px;
         }
 
-        @media (max-width: 992px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
+        @media (max-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
@@ -120,7 +114,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Sorgt dafür, dass die Ecken der Bilder bündig sind */
+            overflow: hidden;
         }
 
         .portfolio-card:hover {
@@ -129,10 +123,10 @@
             border-color: #b5b5b5;
         }
 
-        /* Das Filmbild in der Kachel (16:9 Format) */
+        /* Filmbilder im 16:9 Format */
         .portfolio-image {
             width: 100%;
-            height: 180px;
+            height: 240px;
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid var(--border-light);
@@ -140,11 +134,11 @@
         }
 
         .portfolio-card:hover .portfolio-image {
-            transform: scale(1.03); /* Leichter Zoom-Effekt bei Hover */
+            transform: scale(1.02);
         }
 
         .portfolio-content {
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -161,16 +155,16 @@
 
         .portfolio-card h3 {
             font-family: Georgia, serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 400;
             margin: 0 0 12px 0;
             line-height: 1.4;
         }
 
         .portfolio-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin: 0 0 20px 0;
+            margin: 0 0 25px 0;
             line-height: 1.6;
         }
 
@@ -275,44 +269,56 @@
             <p class="lead">Ich arbeite als freie Journalistin und Filmemacherin an der Schnittstelle von gesellschaftsrelevanter Recherche und bildstarker Dokumentation. Für öffentlich-rechtliche Formate realisiere ich Reportagen und Dokus, die komplexe Themen nahbar, kritisch und visuell anspruchsvoll erzählen – sowohl hinter der Kamera als auch als Reporterin im On.</p>
         </section>
 
-        <!-- Portfolio (Mediathek Highlights mit Bildern) -->
+        <!-- Portfolio (Die 4 echten Mediathek-Direktlinks) -->
         <section id="portfolio">
             <h2>Arbeiten in den Mediatheken</h2>
             <div class="portfolio-grid">
                 
-                <!-- Doku 1: Die Spur -->
-                <a href="https://www.zdf.de/dokumentation/die-spur" target="_blank" class="portfolio-card" style="border: 1px solid var(--text-color);">
-                    <!-- Filmbild Platzhalter 1 (Kamera-Fokus) -->
-                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=600');"></div>
+                <!-- Film 1: Die Spur (Mietfalle) -->
+                <a href="https://www.zdf.de/play/reportagen/die-spur-224/mietfalle-moebliert-abzocke-wohnen-100?staffel=2025" target="_blank" class="portfolio-card" style="border: 1px solid var(--text-color);">
+                    <!-- Platzhalterbild: Wohnen / Modernes Gebäude -->
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=600');"></div>
                     <div class="portfolio-content">
                         <div class="sender" style="color: var(--text-color); font-weight: bold;">ZDF Mediathek • On-Camera</div>
-                        <h3>Die Spur</h3>
-                        <p>Investigatives Reportage-Format des ZDF. Hier bin ich als Reporterin vor der Kamera im Einsatz, um komplexe Missstände und gesellschaftliche Themen hautnah zu recherchieren und aufzudecken.</p>
+                        <h3>Die Spur: Mietfalle möbliert</h3>
+                        <p>Untermiete zu Wucherpreisen und rechtliche Grauzonen: Für das investigative ZDF-Format decke ich als Reporterin vor der Kamera die rücksichtslose Abzocke auf dem überhitzten Wohnungsmarkt auf.</p>
                         <span class="link-label">Film ansehen →</span>
                     </div>
                 </a>
 
-                <!-- Doku 2: Frauen braucht das Land -->
-                <a href="https://www.ardmediathek.de" target="_blank" class="portfolio-card">
-                    <!-- Filmbild Platzhalter 2 (Natur/Drohnenaufnahme) -->
+                <!-- Film 2: Frauen braucht das Land -->
+                <a href="https://www.ardmediathek.de/serie/frauen-braucht-sat-land/staffel-1/Y3JpZDovL25kci5kZS81MTMy/1" target="_blank" class="portfolio-card">
+                    <!-- Platzhalterbild: Natur / Norddeutschland -->
                     <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600');"></div>
                     <div class="portfolio-content">
                         <div class="sender">ARD Mediathek</div>
                         <h3>Frauen braucht das Land</h3>
-                        <p>Dokuserie über mutige, innovative Unternehmerinnen, die das Leben und Arbeiten in ländlichen Regionen Norddeutschlands neu gestalten.</p>
-                        <span class="link-label">In der Mediathek ansehen →</span>
+                        <p>Eine vierteilige ARD-Dokuserie über mutige und innovative Gründerinnen, die mit ihren zukunftsweisenden Ideen das Leben und Wirtschaften auf dem Land revolutionieren.</p>
+                        <span class="link-label">Serie ansehen →</span>
                     </div>
                 </a>
 
-                <!-- Doku 3: How to: Reich werden wie Boomer -->
-                <a href="https://www.zdf.de" target="_blank" class="portfolio-card">
-                    <!-- Filmbild Platzhalter 3 (Finanzen/Stadt/Zahlen) -->
+                <!-- Film 3: How to: Reich werden wie Boomer -->
+                <a href="https://www.zdf.de/video/dokus/wiso-die-doku-100/how-to-reich-werden-wie-die-boomer-102" target="_blank" class="portfolio-card">
+                    <!-- Platzhalterbild: Business / Finanzen -->
                     <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600');"></div>
                     <div class="portfolio-content">
-                        <div class="sender">ZDF Mediathek</div>
-                        <h3>How to: Reich werden wie Boomer</h3>
-                        <p>Ein augenzwinkernder und fundierter Wirtschaftsfilm, der die ungleichen Chancen beim Vermögensaufbau zwischen Gen Z/Millennials und Babyboomern analysiert.</p>
-                        <span class="link-label">In der Mediathek ansehen →</span>
+                        <div class="sender">ZDF Mediathek • WISO-Doku</div>
+                        <h3>How to: Reich werden wie die Boomer</h3>
+                        <p>Ein analytischer, humorvoller Blick auf den historischen Vermögensaufbau. Werden jüngere Generationen jemals wieder so einfach Wohlstand erreichen können wie die Babyboomer?</p>
+                        <span class="link-label">Film ansehen →</span>
+                    </div>
+                </a>
+
+                <!-- Film 4: Plan B -->
+                <a href="https://www.zdf.de/video/dokus/plan-b-104/plan-b-jede-minute-zaehlt-100" target="_blank" class="portfolio-card">
+                    <!-- Platzhalterbild: Fokus / Zeit / Rettungsdienst -->
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1508962914676-134849a727f0?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="portfolio-content">
+                        <div class="sender">ZDF Mediathek • plan b</div>
+                        <h3>plan b: Jede Minute zählt</h3>
+                        <p>Konstruktiver Journalismus pur: Ein inspirierender Film über innovative, lösungsorientierte Ansätze und Menschen, die unsere gesellschaftlichen Probleme anpacken.</p>
+                        <span class="link-label">Film ansehen →</span>
                     </div>
                 </a>
 
@@ -322,7 +328,6 @@
         <!-- Profile & Portfolios -->
         <section id="networks">
             <h2>Netzwerke</h2>
-            <p>Für eine vollständige Übersicht meiner Filmografie und beruflichen Stationen:</p>
             
             <div class="social-buttons">
                 <a href="https://www.crew-united.com/de/Carolin-Hentschel_820226.html" target="_blank" class="btn-outline">
