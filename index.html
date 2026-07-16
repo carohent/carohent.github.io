@@ -6,144 +6,241 @@
     <title>Carolin Hentschel | Journalistin & Filmemacherin</title>
     <style>
         :root {
-            --bg-color: #0d0f12;
-            --card-bg: #161a22;
-            --text-color: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8; /* Elegantes Kamera-Blau */
-            --border: #242b35;
+            --bg-color: #fcfcfc;
+            --text-color: #1a1a1a;
+            --text-muted: #666666;
+            --border-light: #e8e8e8;
+            --card-bg: #ffffff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Serif, sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Hero Header */
+        /* Großer visueller Header (Hero) */
+        .hero-banner {
+            width: 100%;
+            height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1200'); /* Platzhalter: Filmklappe/Set */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
         header {
-            min-height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 1px solid var(--border);
-            background: radial-gradient(circle at center, #1e293b 0%, #0d0f12 100%);
+            padding: 60px 20px 40px 20px;
+            background-color: var(--bg-color);
         }
 
         header h1 {
-            font-size: 2.8rem;
+            font-family: Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 300;
             margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
-            font-weight: 800;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.4rem;
-            color: var(--accent);
+            font-size: 1rem;
+            color: var(--text-muted);
             margin: 0;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-weight: 400;
+            letter-spacing: 4px;
             text-transform: uppercase;
+        }
+
+        .header-line {
+            width: 50px;
+            height: 1px;
+            background-color: var(--text-color);
+            margin: 30px auto 0 auto;
         }
 
         /* Container */
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 20px 20px 80px 20px;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 90px;
         }
 
         h2 {
-            font-size: 1.6rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 12px;
-            margin-bottom: 25px;
-            font-weight: 600;
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
+        p.lead {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: var(--text-color);
+            max-width: 850px;
         }
 
-        /* Buttons & Links */
-        .links-grid {
+        /* Visuelles Portfolio Grid (3 Spalten mit Bildern) */
+        .portfolio-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
         }
 
-        @media (max-width: 480px) {
-            .links-grid {
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .portfolio-card {
             background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Sorgt dafür, dass die Ecken der Bilder bündig sind */
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            border-color: #b5b5b5;
+        }
+
+        /* Das Filmbild in der Kachel (16:9 Format) */
+        .portfolio-image {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid var(--border-light);
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.03); /* Leichter Zoom-Effekt bei Hover */
+        }
+
+        .portfolio-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .portfolio-card .sender {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .portfolio-card h3 {
+            font-family: Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+
+        .portfolio-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0 0 20px 0;
+            line-height: 1.6;
+        }
+
+        .portfolio-card .link-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-color);
+            margin-top: auto;
+        }
+
+        /* Buttons & Socials */
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 480px) {
+            .social-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .btn-outline {
+            flex: 1;
+            text-align: center;
+            border: 1px solid var(--text-color);
+            background: transparent;
             color: var(--text-color);
             padding: 15px 20px;
-            border-radius: 8px;
             text-decoration: none;
+            font-size: 0.9rem;
             font-weight: 600;
-            border: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             transition: all 0.2s ease;
         }
 
-        .btn:hover {
-            border-color: var(--accent);
-            background: #1e2430;
-            transform: translateY(-2px);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #0d0f12;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: #7dd3fc;
-            color: #0d0f12;
+        .btn-outline:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
         }
 
         /* Kontaktbox */
         .contact-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
+            border: 1px solid var(--border-light);
+            padding: 50px 40px;
             text-align: center;
-            margin-top: 40px;
+            background-color: var(--card-bg);
         }
 
         .contact-box a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: underline;
+            font-family: Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 400;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.85rem;
             color: var(--text-muted);
+            letter-spacing: 1px;
         }
 
         footer a {
@@ -152,39 +249,87 @@
         }
 
         footer a:hover {
-            color: var(--accent);
+            color: var(--text-color);
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Bereich -->
+    <!-- Großer Bild-Header oben -->
+    <div class="hero-banner"></div>
+
+    <!-- Name & Titel -->
     <header>
         <h1>Carolin Hentschel</h1>
-        <p>Freie Journalistin & Filmemacherin</p>
+        <p>Journalistin & Filmemacherin</p>
+        <div class="header-line"></div>
     </header>
 
     <!-- Hauptinhalt -->
     <div class="container">
         
-        <!-- Über mich -->
+        <!-- Porträt -->
         <section id="about">
-            <h2>Über mich</h2>
-            <p>Willkommen auf meiner digitalen Visitenkarte.</p>
-            <p>Als freie Journalistin und Filmemacherin bewege ich mich an der Schnittstelle von präziser Recherche und starker visueller Erzählung. Ich konzipiere, schreibe und realisiere journalistische Formate und Filmprojekte.</p>
+            <h2>Porträt</h2>
+            <p class="lead">Ich arbeite als freie Journalistin und Filmemacherin an der Schnittstelle von gesellschaftsrelevanter Recherche und bildstarker Dokumentation. Für öffentlich-rechtliche Formate realisiere ich Reportagen und Dokus, die komplexe Themen nahbar, kritisch und visuell anspruchsvoll erzählen – sowohl hinter der Kamera als auch als Reporterin im On.</p>
+        </section>
+
+        <!-- Portfolio (Mediathek Highlights mit Bildern) -->
+        <section id="portfolio">
+            <h2>Arbeiten in den Mediatheken</h2>
+            <div class="portfolio-grid">
+                
+                <!-- Doku 1: Die Spur -->
+                <a href="https://www.zdf.de/dokumentation/die-spur" target="_blank" class="portfolio-card" style="border: 1px solid var(--text-color);">
+                    <!-- Filmbild Platzhalter 1 (Kamera-Fokus) -->
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="portfolio-content">
+                        <div class="sender" style="color: var(--text-color); font-weight: bold;">ZDF Mediathek • On-Camera</div>
+                        <h3>Die Spur</h3>
+                        <p>Investigatives Reportage-Format des ZDF. Hier bin ich als Reporterin vor der Kamera im Einsatz, um komplexe Missstände und gesellschaftliche Themen hautnah zu recherchieren und aufzudecken.</p>
+                        <span class="link-label">Film ansehen →</span>
+                    </div>
+                </a>
+
+                <!-- Doku 2: Frauen braucht das Land -->
+                <a href="https://www.ardmediathek.de" target="_blank" class="portfolio-card">
+                    <!-- Filmbild Platzhalter 2 (Natur/Drohnenaufnahme) -->
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="portfolio-content">
+                        <div class="sender">ARD Mediathek</div>
+                        <h3>Frauen braucht das Land</h3>
+                        <p>Dokuserie über mutige, innovative Unternehmerinnen, die das Leben und Arbeiten in ländlichen Regionen Norddeutschlands neu gestalten.</p>
+                        <span class="link-label">In der Mediathek ansehen →</span>
+                    </div>
+                </a>
+
+                <!-- Doku 3: How to: Reich werden wie Boomer -->
+                <a href="https://www.zdf.de" target="_blank" class="portfolio-card">
+                    <!-- Filmbild Platzhalter 3 (Finanzen/Stadt/Zahlen) -->
+                    <div class="portfolio-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="portfolio-content">
+                        <div class="sender">ZDF Mediathek</div>
+                        <h3>How to: Reich werden wie Boomer</h3>
+                        <p>Ein augenzwinkernder und fundierter Wirtschaftsfilm, der die ungleichen Chancen beim Vermögensaufbau zwischen Gen Z/Millennials und Babyboomern analysiert.</p>
+                        <span class="link-label">In der Mediathek ansehen →</span>
+                    </div>
+                </a>
+
+            </div>
         </section>
 
         <!-- Profile & Portfolios -->
         <section id="networks">
-            <h2>Portfolios & Netzwerke</h2>
-            <p>Detaillierte Informationen zu meinen bisherigen Filmprojekten, Sendern und journalistischen Arbeiten findest du auf meinen Profilen:</p>
+            <h2>Netzwerke</h2>
+            <p>Für eine vollständige Übersicht meiner Filmografie und beruflichen Stationen:</p>
             
-            <div class="links-grid">
-                <a href="https://www.crew-united.com/de/Carolin-Hentschel_820226.html" target="_blank" class="btn">
-                    🎥 Crew United Profil
+            <div class="social-buttons">
+                <a href="https://www.crew-united.com/de/Carolin-Hentschel_820226.html" target="_blank" class="btn-outline">
+                    🎥 Crew United
                 </a>
-                <a href="https://www.linkedin.com/in/carolin-hentschel-299532101/" target="_blank" class="btn">
-                    💼 LinkedIn Profil
+                <a href="https://www.linkedin.com/in/carolin-hentschel-299532101/" target="_blank" class="btn-outline">
+                    💼 LinkedIn
                 </a>
             </div>
         </section>
@@ -193,12 +338,9 @@
         <section id="contact">
             <h2>Kontakt</h2>
             <div class="contact-box">
-                <p>Du möchtest mit mir zusammenarbeiten, hast eine Projektidee oder eine Anfrage?</p>
-                <p style="font-size: 1.2rem; margin: 20px 0;">
-                    <strong>E-Mail:</strong> <a href="mailto:carolin.hentschel@proton.me">carolin.hentschel@proton.me</a>
-                </p>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">
-            
+                <p>Für Projektanfragen, Regiearbeiten oder redaktionelle Kooperationen:</p>
+                <p style="margin: 25px 0;">
+                    <a href="mailto:kontakt@carolin-hentschel.de">kontakt@carolin-hentschel.de</a>
                 </p>
             </div>
         </section>
@@ -207,7 +349,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Carolin Hentschel. | <a href="#impressum">Impressum & Datenschutz</a></p>
+        <p>&copy; 2026 Carolin Hentschel. All rights reserved. | <a href="#impressum">Impressum & Datenschutz</a></p>
     </footer>
 
 </body>
