@@ -11,10 +11,11 @@
             --text-muted: #666666;
             --border-light: #e8e8e8;
             --card-bg: #ffffff;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Serif, sans-serif;
+            font-family: var(--font-family);
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -27,7 +28,7 @@
         .hero-banner {
             width: 100%;
             height: 350px;
-            background-image: url('carolin-hentschel_banner.jpg');
+            background-image: url('carolin-hentschel_banner.JPG');
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid var(--border-light);
@@ -40,19 +41,18 @@
         }
 
         header h1 {
-            font-family: Georgia, serif;
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 300;
             margin: 0 0 10px 0;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         header p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             margin: 0;
-            font-weight: 400;
-            letter-spacing: 4px;
+            font-weight: 500;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
 
@@ -74,9 +74,8 @@
         }
 
         h2 {
-            font-family: Georgia, serif;
-            font-size: 1.8rem;
-            font-weight: 300;
+            font-size: 1.6rem;
+            font-weight: 500;
             border-bottom: 1px solid var(--border-light);
             padding-bottom: 15px;
             margin-bottom: 40px;
@@ -84,7 +83,7 @@
         }
 
         p.lead {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             line-height: 1.8;
             font-weight: 300;
             color: var(--text-color);
@@ -119,11 +118,11 @@
             border-color: #1a1a1a;
         }
 
-        /* 16:9 Responsive iFrame Container */
+        /* Responsive 16:9 Container */
         .iframe-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Ratio */
+            padding-bottom: 56.25%;
             height: 0;
             background-color: #000000;
         }
@@ -149,7 +148,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             color: var(--text-muted);
             margin-bottom: 12px;
             display: flex;
@@ -166,11 +165,10 @@
         }
 
         .card-body h3 {
-            font-family: Georgia, serif;
-            font-size: 1.4rem;
-            font-weight: 400;
+            font-size: 1.3rem;
+            font-weight: 500;
             margin: 0 0 12px 0;
-            line-height: 1.3;
+            line-height: 1.4;
         }
 
         .card-body p {
@@ -178,33 +176,6 @@
             color: var(--text-muted);
             margin: 0;
             line-height: 1.6;
-        }
-
-        /* Social Buttons */
-        .social-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .btn-outline {
-            flex: 1;
-            text-align: center;
-            border: 1px solid var(--text-color);
-            background: transparent;
-            color: var(--text-color);
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            background: var(--text-color);
-            color: var(--bg-color);
         }
 
         /* Contact Box */
@@ -215,11 +186,64 @@
             background-color: var(--card-bg);
         }
 
-        .contact-box a {
+        .contact-intro {
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            margin: 25px 0 35px 0;
+        }
+
+        .contact-email a {
             color: var(--text-color);
             text-decoration: underline;
-            font-family: Georgia, serif;
             font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+
+        .social-links a:hover {
+            border-bottom-color: var(--text-color);
+        }
+
+        .messenger-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-top: 1px dashed var(--border-light);
+            padding-top: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .messenger-item {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .messenger-item strong {
+            color: var(--text-color);
+            font-weight: 600;
         }
 
         /* Footer & Modal */
@@ -340,29 +364,30 @@
             </div>
         </section>
 
-        <!-- Netzwerke -->
-        <section id="networks">
-            <h2>Netzwerke</h2>
-            <p>Für eine vollständige Übersicht meiner Filmografie und beruflichen Stationen:</p>
-            
-            <div class="social-buttons">
-                <a href="https://www.crew-united.com/de/Carolin-Hentschel_820226.html" target="_blank" class="btn-outline">
-                    🎥 Crew United
-                </a>
-                <a href="https://www.linkedin.com/in/carolin-hentschel-299532101/" target="_blank" class="btn-outline">
-                    💼 LinkedIn
-                </a>
-            </div>
-        </section>
-
         <!-- Kontakt -->
         <section id="contact">
             <h2>Kontakt</h2>
             <div class="contact-box">
-                <p>Für Projektanfragen, Regiearbeiten oder redaktionelle Kooperationen:</p>
-                <p style="margin: 25px 0;">
-                    <a href="mailto:carolin.hentschel@proton.me">carolin.hentschel@proton.me</a>
-                </p>
+                <p class="contact-intro">Melden Sie sich gerne – für Projektanfragen, Regiearbeiten oder einen unkomplizierten Austausch.</p>
+                
+                <div class="contact-email">
+                    <a href="mailto:kontakt@carolin-hentschel.de">kontakt@carolin-hentschel.de</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/carolin-hentschel-299532101/" target="_blank" rel="noopener">LinkedIn</a>
+                    <span>•</span>
+                    <a href="https://www.instagram.com/caro_hent/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+
+                <div class="messenger-box">
+                    <div class="messenger-item">
+                        Signal: <strong>@Hentschel.40</strong>
+                    </div>
+                    <div class="messenger-item">
+                        Threema: <strong>VBNJD4JM</strong>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -381,8 +406,8 @@
             <p>50823 Köln</p>
 
             <h3>Kontakt</h3>
-            <p>Telefon: +49 163 1766071</p>
-            <p>E-Mail: carolin.hentschel@proton.me</p>
+            <p>E-Mail: kontakt@carolin-hentschel.de</p>
+            <p>Signal: @Hentschel.40</p>
 
             <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
             <p>Carolin Hentschel</p>
