@@ -6,12 +6,18 @@
     <title>Carolin Hentschel | Journalistin & Filmemacherin</title>
     <style>
         :root {
-            --bg-color: #fcfcfc;
-            --text-color: #1a1a1a;
-            --text-muted: #666666;
-            --border-light: #e8e8e8;
-            --card-bg: #ffffff;
+            /* DUNKLES THEME / CINEMATIC DARK MODE */
+            --bg-color: #121316;          /* Sehr elegantes, dunkles Anthrazit */
+            --header-bg: #18191d;         /* Header hebt sich leicht ab */
+            --text-color: #f0f0f2;        /* Angenehmes, augenschonendes Weiß */
+            --text-muted: #9a9ca6;       /* Dezentes Grau für Untertitel/Details */
+            --border-light: #262830;      /* Subtile dunkle Linien */
+            --card-bg: #1a1b20;          /* Karten-Hintergrund */
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -28,16 +34,19 @@
         .hero-banner {
             width: 100%;
             height: 350px;
-            background-image: url('carolin-hentschel-banner.jpg');
+            background-image: url('carolin-hentschel_banner.PG');
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid var(--border-light);
+            /* Zarter dunkler Overlay-Effekt für Cinematic-Look */
+            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.2);
         }
 
         header {
             text-align: center;
             padding: 60px 20px 40px 20px;
-            background-color: var(--bg-color);
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--border-light);
         }
 
         header h1 {
@@ -45,6 +54,7 @@
             font-weight: 300;
             margin: 0 0 10px 0;
             letter-spacing: 0.5px;
+            color: #ffffff;
         }
 
         header p {
@@ -59,14 +69,14 @@
         .header-line {
             width: 50px;
             height: 1px;
-            background-color: var(--text-color);
+            background-color: var(--text-muted);
             margin: 30px auto 0 auto;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 20px 80px 20px;
+            padding: 40px 20px 80px 20px;
         }
 
         section {
@@ -75,18 +85,19 @@
 
         h2 {
             font-size: 1.6rem;
-            font-weight: 500;
+            font-weight: 400;
             border-bottom: 1px solid var(--border-light);
             padding-bottom: 15px;
             margin-bottom: 40px;
             letter-spacing: 0.5px;
+            color: #ffffff;
         }
 
         p.lead {
             font-size: 1.25rem;
             line-height: 1.8;
             font-weight: 300;
-            color: var(--text-color);
+            color: #d8d9e0;
             max-width: 850px;
         }
 
@@ -107,6 +118,7 @@
         .video-card {
             background: var(--card-bg);
             border: 1px solid var(--border-light);
+            border-radius: 6px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -114,8 +126,9 @@
         }
 
         .video-card:hover {
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            border-color: #1a1a1a;
+            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5);
+            border-color: #3b3e4a;
+            transform: translateY(-3px);
         }
 
         /* Responsive 16:9 Container */
@@ -157,11 +170,13 @@
         }
 
         .on-camera {
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #121316;
             padding: 2px 7px;
             font-size: 0.65rem;
             letter-spacing: 1px;
+            border-radius: 2px;
+            font-weight: 700;
         }
 
         .card-body h3 {
@@ -169,6 +184,7 @@
             font-weight: 500;
             margin: 0 0 12px 0;
             line-height: 1.4;
+            color: #ffffff;
         }
 
         .card-body p {
@@ -181,6 +197,7 @@
         /* Contact Box */
         .contact-box {
             border: 1px solid var(--border-light);
+            border-radius: 6px;
             padding: 50px 40px;
             text-align: center;
             background-color: var(--card-bg);
@@ -190,6 +207,7 @@
             font-size: 1.15rem;
             font-weight: 300;
             margin-bottom: 30px;
+            color: #d8d9e0;
         }
 
         .contact-email {
@@ -197,10 +215,15 @@
         }
 
         .contact-email a {
-            color: var(--text-color);
+            color: #ffffff;
             text-decoration: underline;
             font-size: 1.4rem;
             font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .contact-email a:hover {
+            opacity: 0.8;
         }
 
         .social-links {
@@ -211,18 +234,19 @@
         }
 
         .social-links a {
-            color: var(--text-color);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             border-bottom: 1px solid transparent;
             padding-bottom: 2px;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
         .social-links a:hover {
-            border-bottom-color: var(--text-color);
+            color: #ffffff;
+            border-bottom-color: #ffffff;
         }
 
         .messenger-box {
@@ -242,7 +266,7 @@
         }
 
         .messenger-item strong {
-            color: var(--text-color);
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -253,9 +277,11 @@
             border-top: 1px solid var(--border-light);
             font-size: 0.85rem;
             color: var(--text-muted);
+            background-color: var(--header-bg);
         }
 
         footer a { color: var(--text-muted); cursor: pointer; text-decoration: underline; }
+        footer a:hover { color: #ffffff; }
 
         .modal {
             display: none; 
@@ -263,22 +289,32 @@
             z-index: 1000; 
             left: 0; top: 0; 
             width: 100%; height: 100%; 
-            background-color: rgba(0,0,0,0.4); 
-            backdrop-filter: blur(3px);
+            background-color: rgba(0,0,0,0.7); 
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background-color: var(--card-bg);
-            margin: 10% auto; 
+            color: var(--text-color);
+            margin: 8% auto; 
             padding: 40px;
             border: 1px solid var(--border-light);
+            border-radius: 6px;
             width: 80%; max-width: 650px; 
             position: relative;
+        }
+
+        .modal-content h2, .modal-content h3 {
+            color: #ffffff;
         }
 
         .close-btn {
             position: absolute; top: 20px; right: 25px; 
             font-size: 28px; cursor: pointer; color: var(--text-muted);
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -294,8 +330,9 @@
 
     <div class="container">
         
+        <!-- SEKTION HIER VON 'PORTRÄT' AUF 'ÜBER MICH' GEÄNDERT -->
         <section id="about">
-            <h2>Porträt</h2>
+            <h2>Über mich</h2>
             <p class="lead">Ich arbeite als freie Journalistin und Filmemacherin an der Schnittstelle von gesellschaftsrelevanter Recherche und bildstarker Dokumentation. Für öffentlich-rechtliche Formate realisiere ich Reportagen und Dokus, die komplexe Themen nahbar, kritisch und visuell anspruchsvoll erzählen – sowohl hinter der Kamera als auch als Reporterin im On.</p>
         </section>
 
@@ -304,7 +341,7 @@
             <h2>Arbeiten in den Mediatheken</h2>
             <div class="video-grid">
                 
-                <!-- 1. ZDF: How to: Reich werden wie die Boomer (ZDF NGP Player) -->
+                <!-- 1. ZDF: How to: Reich werden wie die Boomer -->
                 <div class="video-card">
                     <div class="iframe-container">
                         <iframe src="https://ngp.zdf.de/miniplayer/embed/?mediaID=how-to-reich-werden-wie-die-boomer-102" title="How to: Reich werden wie die Boomer" allowfullscreen></iframe>
@@ -318,7 +355,7 @@
                     </div>
                 </div>
 
-                <!-- 2. ZDF: plan b: Jede Minute zählt (ZDF NGP Player) -->
+                <!-- 2. ZDF: plan b: Jede Minute zählt -->
                 <div class="video-card">
                     <div class="iframe-container">
                         <iframe src="https://ngp.zdf.de/miniplayer/embed/?mediaID=plan-b-jede-minute-zaehlt-100" title="plan b: Jede Minute zählt" allowfullscreen></iframe>
@@ -332,7 +369,7 @@
                     </div>
                 </div>
 
-                <!-- 3. ZDF: Die Spur - Im Sog der Coaching-Szene (YouTube Embed) -->
+                <!-- 3. ZDF: Die Spur - Im Sog der Coaching-Szene -->
                 <div class="video-card">
                     <div class="iframe-container">
                         <iframe src="https://www.youtube.com/embed/d_Ldq73n4AI?si=vqimYOXEG6DiscAP" title="Im Sog der Coaching-Szene | Die Spur" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -347,7 +384,7 @@
                     </div>
                 </div>
 
-                <!-- 4. ARD / NDR: Frauen braucht das Land (YouTube Embed) -->
+                <!-- 4. ARD / NDR: Frauen braucht das Land -->
                 <div class="video-card">
                     <div class="iframe-container">
                         <iframe src="https://www.youtube.com/embed/3hZ0jaOEjeY?si=X6Gs9tHW2oQkMJbt" title="Frauen braucht das Land | NDR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
