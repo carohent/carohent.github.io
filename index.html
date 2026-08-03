@@ -6,20 +6,12 @@
     <title>Carolin Hentschel | Journalistin & Filmemacherin</title>
     <style>
         :root {
-            /* DUNKLES THÈME / DARK MODE */
-            --bg-color: #121316;          /* Edles, sehr dunkles Anthrazit */
-            --header-bg: #18191d;         /* Leicht abgehobener Header */
-            --text-color: #f0f0f2;        /* Weiches Weiß für Texte */
-            --text-muted: #9a9ca6;       /* Dezentes Grau für Beschreibungen */
-            --accent-color: #d4af37;      /* Warmes Gold/Beige für Highlights */
-            --border-light: #2a2c33;      /* Feine dunkle Trennlinien */
-            --card-bg: #1e2026;          /* Dunkle Karten für Videos & Text */
-            --card-hover: #252830;       /* Sanfter Effekt beim Drüberfahren */
+            --bg-color: #fcfcfc;
+            --text-color: #1a1a1a;
+            --text-muted: #666666;
+            --border-light: #e8e8e8;
+            --card-bg: #ffffff;
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
         }
 
         body {
@@ -32,113 +24,110 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        header {
-            background-color: var(--header-bg);
-            border-bottom: 1px solid var(--border-light);
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.2rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            color: var(--text-color);
-        }
-
-        header p {
-            margin: 5px 0 20px 0;
-            color: var(--text-muted);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
         /* Banner Header */
         .hero-banner {
             width: 100%;
-            height: 320px;
-            background-image: url('carolin-hentschel_banner.JPG');
+            height: 350px;
+            background-image: url('carolin-hentschel-banner.jpg');
             background-size: cover;
             background-position: center;
             border-bottom: 1px solid var(--border-light);
-            /* Dunkler Filter über dem Banner für stimmungsvollen Film-Look */
-            box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.25);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            background-color: var(--bg-color);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .header-line {
+            width: 50px;
+            height: 1px;
+            background-color: var(--text-color);
+            margin: 30px auto 0 auto;
         }
 
         .container {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 20px 20px 80px 20px;
         }
 
         section {
-            margin-bottom: 60px;
+            margin-bottom: 90px;
         }
 
         h2 {
             font-size: 1.6rem;
-            font-weight: 400;
-            color: var(--text-color);
-            margin-bottom: 25px;
-            padding-bottom: 10px;
+            font-weight: 500;
             border-bottom: 1px solid var(--border-light);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
             letter-spacing: 0.5px;
         }
 
-        /* UBER MICH BEREICH */
-        .about-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 30px;
+        p.lead {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            font-weight: 300;
             color: var(--text-color);
+            max-width: 850px;
         }
 
-        /* VIDEO GRID LAYOUT (Extrem clean) */
+        /* Video Grid Layout */
         .video-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .video-card {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border: 1px solid var(--border-light);
-            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .video-card:hover {
-            transform: translateY(-4px);
-            border-color: #3d414d;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: #1a1a1a;
         }
 
-        /* 16:9 Format für Videos */
-        .video-wrapper {
+        /* Responsive 16:9 Container */
+        .iframe-container {
             position: relative;
+            width: 100%;
             padding-bottom: 56.25%;
             height: 0;
             background-color: #000000;
         }
 
-        .video-wrapper iframe {
+        .iframe-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -147,110 +136,296 @@
             border: 0;
         }
 
-        .video-info {
-            padding: 20px;
+        /* Card Text Body */
+        .card-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
-        .video-info h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.1rem;
+        .sender-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .on-camera {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 2px 7px;
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
             font-weight: 500;
-            color: var(--text-color);
+            margin: 0 0 12px 0;
+            line-height: 1.4;
         }
 
-        .video-info p {
+        .card-body p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
             margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            border: 1px solid var(--border-light);
+            padding: 50px 40px;
+            text-align: center;
+            background-color: var(--card-bg);
+        }
+
+        .contact-intro {
+            font-size: 1.15rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .contact-email {
+            margin: 25px 0 35px 0;
+        }
+
+        .contact-email a {
+            color: var(--text-color);
+            text-decoration: underline;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color 0.2s;
+        }
+
+        .social-links a:hover {
+            border-bottom-color: var(--text-color);
+        }
+
+        .messenger-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            border-top: 1px dashed var(--border-light);
+            padding-top: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .messenger-item {
             font-size: 0.9rem;
             color: var(--text-muted);
         }
 
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border-light);
-            color: var(--text-muted);
-            font-size: 0.85rem;
+        .messenger-item strong {
+            color: var(--text-color);
+            font-weight: 600;
         }
 
-        footer a {
+        /* Footer & Modal */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.85rem;
             color: var(--text-muted);
-            text-decoration: underline;
         }
-        
-        footer a:hover {
-            color: var(--text-color);
+
+        footer a { color: var(--text-muted); cursor: pointer; text-decoration: underline; }
+
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(0,0,0,0.4); 
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 10% auto; 
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            width: 80%; max-width: 650px; 
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute; top: 20px; right: 25px; 
+            font-size: 28px; cursor: pointer; color: var(--text-muted);
         }
     </style>
 </head>
 <body>
 
+    <div class="hero-banner"></div>
+
     <header>
         <h1>Carolin Hentschel</h1>
         <p>Journalistin & Filmemacherin</p>
-        <nav>
-            <a href="#about">Über mich</a>
-            <a href="#arbeiten">Arbeiten</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
+        <div class="header-line"></div>
     </header>
 
-    <div class="hero-banner"></div>
-
     <div class="container">
-
-        <!-- Über mich Section -->
+        
         <section id="about">
-            <h2>Über mich</h2>
-            <div class="about-card">
-                <p>Hier kannst du deinen Text einfügen...</p>
-            </div>
+            <h2>Porträt</h2>
+            <p class="lead">Ich arbeite als freie Journalistin und Filmemacherin an der Schnittstelle von gesellschaftsrelevanter Recherche und bildstarker Dokumentation. Für öffentlich-rechtliche Formate realisiere ich Reportagen und Dokus, die komplexe Themen nahbar, kritisch und visuell anspruchsvoll erzählen – sowohl hinter der Kamera als auch als Reporterin im On.</p>
         </section>
 
-        <!-- Arbeiten Section -->
-        <section id="arbeiten">
-            <h2>Arbeiten</h2>
+        <!-- Video Portfolio Grid -->
+        <section id="portfolio">
+            <h2>Arbeiten in den Mediatheken</h2>
             <div class="video-grid">
                 
-                <!-- Video 1 -->
+                <!-- 1. ZDF: How to: Reich werden wie die Boomer (ZDF NGP Player) -->
                 <div class="video-card">
-                    <div class="video-wrapper">
-                        <!-- Hier deinen ZDF oder YouTube Embed Link einsetzen -->
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <div class="iframe-container">
+                        <iframe src="https://ngp.zdf.de/miniplayer/embed/?mediaID=how-to-reich-werden-wie-die-boomer-102" title="How to: Reich werden wie die Boomer" allowfullscreen></iframe>
                     </div>
-                    <div class="video-info">
-                        <h3>Titel der Dokumentation</h3>
-                        <p>ZDF | Regie & Buch</p>
+                    <div class="card-body">
+                        <div class="sender-badge">
+                            <span>ZDF Mediathek • WISO-Doku</span>
+                        </div>
+                        <h3>How to: Reich werden wie die Boomer</h3>
+                        <p>Ein analytischer, humorvoller Blick auf den historischen Vermögensaufbau. Werden jüngere Generationen jemals wieder so einfach Wohlstand erreichen können wie die Babyboomer?</p>
                     </div>
                 </div>
 
-                <!-- Video 2 -->
+                <!-- 2. ZDF: plan b: Jede Minute zählt (ZDF NGP Player) -->
                 <div class="video-card">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    <div class="iframe-container">
+                        <iframe src="https://ngp.zdf.de/miniplayer/embed/?mediaID=plan-b-jede-minute-zaehlt-100" title="plan b: Jede Minute zählt" allowfullscreen></iframe>
                     </div>
-                    <div class="video-info">
-                        <h3>Titel der Reportage</h3>
-                        <p>ARD / Die Spur | Kamera & Recherche</p>
+                    <div class="card-body">
+                        <div class="sender-badge">
+                            <span>ZDF Mediathek • plan b</span>
+                        </div>
+                        <h3>plan b: Jede Minute zählt</h3>
+                        <p>Konstruktiver Journalismus pur: Ein inspirierender Film über innovative, lösungsorientierte Ansätze und Menschen, die unsere gesellschaftlichen Probleme anpacken.</p>
+                    </div>
+                </div>
+
+                <!-- 3. ZDF: Die Spur - Im Sog der Coaching-Szene (YouTube Embed) -->
+                <div class="video-card">
+                    <div class="iframe-container">
+                        <iframe src="https://www.youtube.com/embed/d_Ldq73n4AI?si=vqimYOXEG6DiscAP" title="Im Sog der Coaching-Szene | Die Spur" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <div class="sender-badge">
+                            <span>ZDF • Die Spur</span>
+                            <span class="on-camera">On-Camera</span>
+                        </div>
+                        <h3>Im Sog der Coaching-Szene</h3>
+                        <p>Investigative Recherche vor und hinter der Kamera über die fragwürdigen Methoden, leeren Versprechungen und das große Geld der modernen Coaching-Branche.</p>
+                    </div>
+                </div>
+
+                <!-- 4. ARD / NDR: Frauen braucht das Land (YouTube Embed) -->
+                <div class="video-card">
+                    <div class="iframe-container">
+                        <iframe src="https://www.youtube.com/embed/3hZ0jaOEjeY?si=X6Gs9tHW2oQkMJbt" title="Frauen braucht das Land | NDR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <div class="sender-badge">
+                            <span>NDR / ARD Mediathek</span>
+                        </div>
+                        <h3>Frauen braucht das Land</h3>
+                        <p>Dokumentarische Begleitung mutiger und innovativer Gründerinnen, die mit ihren zukunftsweisenden Ideen das Leben und Wirtschaften im ländlichen Raum verändern.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Kontakt Section -->
-        <section id="kontakt">
+        <!-- Kontakt -->
+        <section id="contact">
             <h2>Kontakt</h2>
-            <div class="about-card">
-                <p>E-Mail: <a href="mailto:kontakt@carolinhentschel.de" style="color: var(--accent-color);">kontakt@carolinhentschel.de</a></p>
+            <div class="contact-box">
+                <p class="contact-intro">Melden Sie sich gerne – für Projektanfragen, Regiearbeiten oder einen unkomplizierten Austausch.</p>
+                
+                <div class="contact-email">
+                    <a href="mailto:kontakt@carolin-hentschel.de">kontakt@carolin-hentschel.de</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/carolin-hentschel-299532101/" target="_blank" rel="noopener">LinkedIn</a>
+                    <span>•</span>
+                    <a href="https://www.instagram.com/caro_hent/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+
+                <div class="messenger-box">
+                    <div class="messenger-item">
+                        Signal: <strong>@Hentschel.40</strong>
+                    </div>
+                    <div class="messenger-item">
+                        Threema: <strong>VBNJD4JM</strong>
+                    </div>
+                </div>
             </div>
         </section>
 
     </div>
 
+    <!-- Impressum Modal -->
+    <div id="impressumModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeImpressum()">&times;</span>
+            <h2>Impressum</h2>
+            
+            <h3>Angaben gemäß § 5 DDG</h3>
+            <p><strong>Carolin Hentschel</strong></p>
+            <p>Freie Journalistin & Filmemacherin</p>
+            <p>Liebigstraße 30</p>
+            <p>50823 Köln</p>
+
+            <h3>Kontakt</h3>
+            <p>E-Mail: kontakt@carolin-hentschel.de</p>
+            <p>Signal: @Hentschel.40</p>
+
+            <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+            <p>Carolin Hentschel</p>
+            <p>Liebigstraße 30</p>
+            <p>50823 Köln</p>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Carolin Hentschel &bull; <a href="impressum.html">Impressum</a></p>
+        <p>&copy; 2026 Carolin Hentschel. All rights reserved. | <a onclick="openImpressum()">Impressum & Datenschutz</a></p>
     </footer>
+
+    <script>
+        var modal = document.getElementById("impressumModal");
+        function openImpressum() { modal.style.display = "block"; document.body.style.overflow = "hidden"; }
+        function closeImpressum() { modal.style.display = "none"; document.body.style.overflow = "auto"; }
+        window.onclick = function(event) { if (event.target == modal) { closeImpressum(); } }
+    </script>
 
 </body>
 </html>
